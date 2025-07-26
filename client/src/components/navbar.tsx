@@ -17,7 +17,6 @@ export default function Navbar() {
     { id: "home", label: "Home" },
     { id: "donations", label: "Donations" },
     { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
   ];
 
   return (

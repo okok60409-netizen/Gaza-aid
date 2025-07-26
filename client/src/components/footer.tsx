@@ -51,34 +51,27 @@ export default function Footer() {
                   About
                 </button>
               </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection("contact")} 
-                  className="hover:text-emerald-500 transition-colors"
-                >
-                  Contact
-                </button>
-              </li>
+
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4 text-slate-300">Important</h4>
+            <h4 className="font-semibold mb-4 text-slate-300">Security & Privacy</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>All charities independently verified</li>
-              <li>Direct donations to organizations</li>
-              <li>Transparent impact reporting</li>
-              <li>Zakat eligible options available</li>
+              <li>Enhanced security protection</li>
+              <li>IP masking & privacy protection</li>
+              <li>Military-grade encryption</li>
+              <li>Anonymous donation routing</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-slate-700 pt-6 text-center">
           <p className="text-slate-400 text-sm mb-2">
-            "And it is He who created the heavens and earth in truth. And the day He says, 'Be,' and it is, His word is the truth."
+            "Allah S.W.T knows best, and we can only guess"
           </p>
           <p className="text-xs text-slate-500">
-            © 2024 Gaza Relief Platform. Built with compassion for humanitarian aid.
+            © 2025 Gaza Relief Platform. Secure, anonymous, and protected humanitarian aid portal.
           </p>
         </div>
       </div>
