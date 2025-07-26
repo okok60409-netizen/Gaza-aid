@@ -15,16 +15,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   });
 
-  // Security status endpoint (for monitoring)
+  // Security status endpoint (for Vercel monitoring)
   app.get("/api/security", (req, res) => {
     res.json({
+      platform: "vercel",
       security: {
         helmet: "enabled",
-        rateLimit: "active",
-        cors: "restricted",
-        ipMasking: "enabled"
+        rateLimit: "active", 
+        cors: "vercel-optimized",
+        ipMasking: "enabled",
+        serverless: "true"
       },
-      message: "Allah S.W.T knows best, and we can only guess"
+      message: "Allah S.W.T knows best, and we can only guess",
+      deployment: process.env.VERCEL_ENV || "development"
     });
   });
 

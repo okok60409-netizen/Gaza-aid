@@ -44,10 +44,17 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-// CORS with restricted origins
+// CORS with restricted origins for Vercel compatibility
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://*.vercel.app'] 
+    ? (origin, callback) => {
+        // Allow Vercel domains and custom domains
+        if (!origin || origin.includes('.vercel.app') || origin.includes('gaza-relief')) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      }
     : ['http://localhost:5000'],
   credentials: false,
   optionsSuccessStatus: 200
@@ -117,25 +124,28 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
+  // Setup Vite in development, static serving in production/Vercel
+  if (process.env.NODE_ENV === "development" && !process.env.VERCEL) {
     await setupVite(app, server);
   } else {
-    serveStatic(app);
+    // For Vercel, static files are served by the platform
+    if (!process.env.VERCEL) {
+      serveStatic(app);
+    }
   }
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+  // For local development only
+  if (!process.env.VERCEL) {
+    const port = parseInt(process.env.PORT || '5000', 10);
+    server.listen({
+      port,
+      host: "0.0.0.0",
+      reusePort: true,
+    }, () => {
+      log(`serving on port ${port} - Allah S.W.T knows best, and we can only guess`);
+    });
+  }
 })();
+
+// Export for Vercel compatibility
+export default app;

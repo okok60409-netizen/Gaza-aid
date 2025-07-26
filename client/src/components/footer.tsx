@@ -71,7 +71,7 @@ export default function Footer() {
             "Allah S.W.T knows best, and we can only guess"
           </p>
           <p className="text-xs text-slate-500">
-            © 2025 Gaza Relief Platform. Secure, anonymous, and protected humanitarian aid portal.
+            © 2025 Gaza Relief Platform. Powered by Vercel • Secure, anonymous, and protected humanitarian aid portal.
           </p>
         </div>
       </div>

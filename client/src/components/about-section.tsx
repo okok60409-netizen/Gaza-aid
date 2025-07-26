@@ -19,7 +19,7 @@ export default function AboutSection() {
             <p className="text-sm text-slate-400">- Quran 5:32</p>
           </div>
           <p className="text-sm text-slate-400 font-medium">
-            Allah S.W.T knows best, and we can only guess as we facilitate your charitable giving.
+            Allah S.W.T knows best, and we can only guess as we facilitate your charitable giving through this secure, Vercel-powered platform.
           </p>
         </div>
       </div>
