@@ -10,8 +10,7 @@ export default function HeroSection() {
   };
 
   const stats = [
-    { value: "15+", label: "Verified Charities", color: "text-emerald-500" },
-    { value: "6", label: "Aid Categories", color: "text-amber-500" },
+    { value: "5+", label: "Verified Charities", color: "text-emerald-500" },
     { value: "24/7", label: "Support Available", color: "text-green-500" },
   ];
 
@@ -26,7 +25,7 @@ export default function HeroSection() {
             Support humanitarian efforts in Gaza through verified Muslim charities. Every donation matters in providing essential aid to those in need.
           </p>
           <div className="text-sm text-slate-400 mb-8 font-medium">
-            "Allah سُبْحَانَهُ وَتَعَالَىٰ Knows Best, and we can only do our part"
+            "Allah S.W.T knows best, and we can only guess"
           </div>
           <Button
             onClick={scrollToDonations}
@@ -39,7 +38,7 @@ export default function HeroSection() {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
           {stats.map((stat, index) => (
             <div
               key={index}

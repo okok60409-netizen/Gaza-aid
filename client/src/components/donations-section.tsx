@@ -7,7 +7,6 @@ import {
   Globe2, 
   Sprout,
   ExternalLink,
-  Shield,
   CheckCircle 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -41,21 +40,24 @@ const iconColorMap = {
   green: "bg-green-500/20 text-green-400",
 };
 
-export default function FeaturedCharities() {
+export default function DonationsSection() {
   const handleDonate = (charity: typeof charities[0]) => {
     window.open(charity.donationUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <section id="featured-charities" className="py-20 px-4 bg-slate-900">
+    <section id="donations" className="py-20 px-4 bg-slate-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-emerald-500">
-            Featured Organizations
-          </h3>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-emerald-500">
+            Make a Donation
+          </h2>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Verified Muslim charities working on the ground in Gaza
+            Choose from verified Muslim charities working directly in Gaza to provide humanitarian aid
           </p>
+          <div className="text-sm text-slate-400 mt-4 font-medium">
+            Allah S.W.T knows best, and we can only guess
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -76,9 +78,9 @@ export default function FeaturedCharities() {
                         <IconComponent className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-lg text-slate-100">
+                        <h3 className="font-semibold text-lg text-slate-100">
                           {charity.name}
-                        </h4>
+                        </h3>
                         <div className="text-sm text-slate-400">
                           {charity.categories.join(" • ")}
                         </div>
@@ -100,7 +102,7 @@ export default function FeaturedCharities() {
                     {charity.description}
                   </p>
 
-                  <div className="space-y-2 mb-4">
+                  <div className="space-y-2 mb-6">
                     {charity.features.map((feature, index) => (
                       <div key={index} className="flex items-center text-sm text-slate-400">
                         <CheckCircle className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" />

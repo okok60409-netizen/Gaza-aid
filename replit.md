@@ -1,10 +1,13 @@
 # Gaza Relief - Charity Directory Platform
 
 ## Overview
-Gaza Relief is a React-based web application that serves as a directory platform for verified Muslim charities providing humanitarian aid to Gaza. The application features a modern, dark-themed interface built with shadcn/ui components and focuses on connecting donors with legitimate charitable organizations.
+Gaza Relief is a React-based web application that serves as a directory platform for verified Muslim charities providing humanitarian aid to Gaza. The application features a modern, dark-themed interface built with shadcn/ui components and focuses on connecting donors with legitimate charitable organizations. Updated with simplified donation section and Vercel compatibility.
 
 ## User Preferences
-Preferred communication style: Simple, everyday language.
+- Preferred communication style: Simple, everyday language
+- Statistics updated: "5+ Verified Charities" instead of "15+"
+- Removed aid categories section for cleaner UI
+- Islamic phrase: "Allah S.W.T knows best, and we can only guess"
 
 ## System Architecture
 
@@ -32,12 +35,11 @@ Preferred communication style: Simple, everyday language.
 
 ### Client-Side Components
 1. **Navigation System**: Fixed navbar with smooth scrolling to sections
-2. **Hero Section**: Landing area with call-to-action and statistics
-3. **Donation Categories**: Interactive category selection with filtering
-4. **Featured Charities**: Card-based charity listings with donation links
-5. **About Section**: Information about the platform and mission
-6. **Contact Section**: Support and contact information
-7. **Footer**: Additional navigation and platform details
+2. **Hero Section**: Landing area with call-to-action and simplified statistics (5+ charities, 24/7 support)
+3. **Donations Section**: Direct charity listings with donation links (replaces separate categories and featured sections)
+4. **About Section**: Information about the platform and mission
+5. **Contact Section**: Support and contact information
+6. **Footer**: Additional navigation and platform details
 
 ### Backend Components
 1. **Route Handler**: Minimal API with health check endpoint
@@ -59,8 +61,8 @@ Preferred communication style: Simple, everyday language.
 4. No server-side data persistence for charity information currently
 
 ### User Interaction Flow
-1. Users browse categories and charities through the single-page interface
-2. Category selection triggers smooth scrolling and filtering
+1. Users browse charities through the single-page interface
+2. Direct access to donation section with all verified charities
 3. Donation actions open external charity websites in new tabs
 4. All interactions are client-side with no backend API calls
 
@@ -116,6 +118,14 @@ Preferred communication style: Simple, everyday language.
 - **ORM Configuration**: Drizzle configured for PostgreSQL dialect
 
 ### Platform Integration
-- **Replit Compatibility**: Configured for Replit development environment
-- **Error Handling**: Runtime error modal for development debugging
+- **Vercel Compatibility**: Configured for Vercel deployment with vercel.json
+- **Development**: Replit development environment support maintained
 - **File System**: Strict file system access controls for security
+
+### Recent Changes (July 26, 2025)
+- Updated statistics from "15+" to "5+" verified charities
+- Removed aid categories section for simplified UI
+- Combined donation categories and featured charities into single donations section
+- Updated Islamic phrase to "Allah S.W.T knows best, and we can only guess"
+- Added Vercel deployment configuration
+- Streamlined component structure for better maintainability
