@@ -10,19 +10,7 @@
       }
     }
   ],
-  "functions": {
-    "api/*.ts": {
-      "runtime": "nodejs20.x",
-      "maxDuration": 30,
-      "memory": 1024,
-      "regions": ["iad1", "fra1", "hkg1"]
-    }
-  },
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
     {
       "src": "/(.*)",
       "dest": "/dist/public/$1"
@@ -57,12 +45,6 @@
           "value": "camera=(), microphone=(), geolocation=()"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
     }
   ]
 }
